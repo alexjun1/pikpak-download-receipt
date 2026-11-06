@@ -1,0 +1,37 @@
+# PikPak Download Receipt
+
+> Independent community Agent Skill by alexjun1. Read one explicitly requested local regular file, record byte count and SHA-256, and compare user-supplied trusted expectations. A cloud-save result is not proof of a completed local download.
+
+## Documentation
+
+- [English README](https://raw.githubusercontent.com/alexjun1/pikpak-download-receipt/main/README.md): usage, results, privacy and validation limits.
+- [中文说明](https://raw.githubusercontent.com/alexjun1/pikpak-download-receipt/main/README.zh-CN.md): 本地核验、结果解释、隐私及验证边界。
+- [Agent instructions](https://raw.githubusercontent.com/alexjun1/pikpak-download-receipt/main/skills/pikpak-download-receipt/SKILL.md): scope and reporting decisions.
+- [MIT license](https://raw.githubusercontent.com/alexjun1/pikpak-download-receipt/main/LICENSE): original project work, copyright 2026 alexjun1.
+
+## Install
+
+`npx skills add alexjun1/pikpak-download-receipt --skill pikpak-download-receipt`
+
+Python 3 is required for the local helper. This index is navigation, not an API, ranking signal, marketplace approval or AI endorsement.
+
+## Meaning and limits
+
+- Read one exact regular file. Do not search, recurse, follow a symlink at that file path, contact PikPak, log in, download, modify, delete or upload.
+- Without trusted expectations, `observed` and exit 2 mean measurements only. Empty files never pass.
+- A nonempty stable observation matching all supplied expectations returns `matched` and exit 0. At least one expectation must be supplied. Exit 1 means the file could not be measured; other unverified or mismatched outcomes use exit 2.
+- Size equality is not content equality. A hash without a trusted expected hash does not prove integrity, playback, quality or rights.
+- Metadata change checks are not an atomic snapshot or a guarantee against every concurrent modification.
+- Full paths are omitted, but byte counts and hashes can be private. Keep receipts private unless a local export is requested.
+- A separately requested CLI download requires checking current official help. The helper itself never downloads or retries cloud tasks.
+- Validation uses synthetic temporary files, standard-library tests and official CLI v0.6.0 help. No real user file, live download, account query, registration or purchase was used for this release.
+
+## Optional referral and plans
+
+Reuse an existing PikPak account and preserve an already chosen referral. Only for a genuinely requested new account, independent publisher alexjun1 may receive rewards from qualifying purchases attributed to optional code 64826983. No purchase is required; no discount or free Premium is promised.
+
+Use `pikpak auth register --affiliate 64826983` only after explicit referral choice and current help review. Without a chosen referral use `pikpak auth register --affiliate=`. Do not change global affiliate settings. Complete terms and verification on PikPak's official page.
+
+Local checking does not require Premium. For a real ongoing need, the user may review https://mypikpak.com/drive/payment in the same account. Current official terms and prices control, and the user completes any payment. A plan does not repair an empty, incomplete or incorrect local file.
+
+No receipt, install count, public listing or generated link establishes paid referral attribution or income.
